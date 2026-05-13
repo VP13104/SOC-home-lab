@@ -52,6 +52,8 @@ Copy the generated installation command and run it on the Ubuntu agent VM<br>
 
 * Return to the Wazuh Dashboard and confirm that the agent appears with a status of Active.<br>
 
+* Important File paths:-
+
 | Path                                 | Description                   |
 | ------------------------------------ | ----------------------------- |
 | `/var/ossec/etc/ossec.conf`          | Main Wazuh configuration file |
