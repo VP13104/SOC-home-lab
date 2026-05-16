@@ -16,11 +16,38 @@ enable and verify status
 sudo systemctl enable auditd
 sudo systemctl start auditd
 sudo systemctl status auditd
+
+sudo augenrules --load   (loads rules)
 ```
+using auditctl 
+```
+auditctl -s   -> Status of auditd
+```
+| enable flag                           | Description                   |
+| --------------------------------------|-------------------------------|
+| 0                                     |auditd is disabled             |
+|1                                      |auditd is enabled              |
+|2                                      |auditd is enabled but the configuration is locked and can only be changed by rebooting the machine.|
 
-| Path                                 | Description                   |
-| ------------------------------------ | ----------------------------- |
-| `/etc/audit/auditd.conf`          | Main auditd configuration file |
-| `/etc/audit/rules.d/`          | Custom audit rules logs            |
-| `/var/log/audit/audit.log`       | Audit event log utility      |
 
+
+## Important Auditd File Locations
+
+| File/Directory | Description |
+|---------------|-------------|
+| `/etc/audit/auditd.conf` | Main configuration file for the Auditd service |
+| `/etc/audit/rules.d/` | Directory containing persistent custom audit rules |
+| `/etc/audit/rules.d/audit.rules` | Custom rules file used in this lab |
+| `/etc/audit/audit.rules` | Compiled rules loaded by Auditd at runtime |
+| `/var/log/audit/audit.log` | Primary audit log file containing recorded events |
+| `/sbin/auditctl` | Command-line utility to view and manage active audit rules |
+| `/sbin/ausearch` | Utility to search and filter audit logs |
+| `/sbin/aureport` | Utility to generate summarized audit reports |
+| `/sbin/augenrules` | Utility to compile and load rules from `/etc/audit/rules.d/` |
+| `/lib/systemd/system/auditd.service` | Systemd service definition for Auditd |
+
+
+# 🔗 Links
+For more info, read the following documentations <br>
+[Auditd](https://linux.die.net/man/8/auditd)<br>
+[Red Hat Docs](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/security_guide/chap-system_auditing)

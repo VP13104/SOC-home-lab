@@ -15,14 +15,13 @@
 # 💻wazuh_manager Installation
 ## Objective 
 Deploy The wazuh manager and Dashboard on Ubuntu server virtual machine to serve as the central SIEM platform 
-([wazuh documentation](https://documentation.wazuh.com/current/index.html))
 
 1. Download and run the Wazuh installation assistant.<br>
 ```curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash ./wazuh-install.sh -a```
 
 Once the assistant finishes the installation, the output shows the access credentials and a message that confirms that the installation was successful.<br>
 
-2. Access the Wazuh web interface with https://<WAZUH_DASHBOARD_IP_ADDRESS> and your credentials:<br>
+2. Access the Wazuh web interface with https://<WAZUH_DASHBOARD_IP_ADDRESS> and your credentials which will displayed with the installation successfull message.<br>
 
 Username: admin<br>
 Password: <ADMIN_PASSWORD>
@@ -38,10 +37,10 @@ The Wazuh agent is multi-platform and runs on the endpoints that you want to mon
 Agents Management → Deploy New Agent 
 ```
 * Select the following options:<br>
-Operating System: Linux<br>
-Wazuh Server Address: <WAZUH_MANAGER_IP><br>
-Agent Name: ubuntu-agent<br>
-Copy the generated installation command and run it on the Ubuntu agent VM<br>
+    - Operating System: Linux<br>
+    - Wazuh Server Address: <WAZUH_MANAGER_IP><br>
+    - Agent Name: ubuntu-agent<br>
+    - Copy the generated installation command and run it on the Ubuntu agent VM<br>
 
 * Enable and start the agent service <br>
 ```sudo systemctl enable wazuh-agent```<br>
@@ -52,7 +51,21 @@ Copy the generated installation command and run it on the Ubuntu agent VM<br>
 
 * Return to the Wazuh Dashboard and confirm that the agent appears with a status of Active.<br>
 
-* Important File paths:-
+## Configure wazuh agent 
+* After installation of wazuh-agent is done 
+* open ossec.conf file
+* `sudo nano /var/ossec/etc/ossec.conf`
+* under ossec_config 
+```
+<server>
+<address>IP address of server</address>
+```
+* image reference: [agent ossec.conf](../images/agent%20ossec.png)
+* restart wazuh-agent<br>
+`sudo systemctl restart wazuh-agent`
+* this will connect to the server now and the agent will be visible on the dashboard
+
+## Important Wazuh Files and Directories
 
 | Path                                 | Description                   |
 | ------------------------------------ | ----------------------------- |
@@ -61,3 +74,8 @@ Copy the generated installation command and run it on the Ubuntu agent VM<br>
 | `/var/ossec/bin/agent_control`       | Agent management utility      |
 | `/var/ossec/logs/alerts/alerts.json` | Generated alerts              |
 
+
+
+# 🔗 Links
+For more info, visit wazuh documentation <br>
+[wazuh documentation](https://documentation.wazuh.com/current/index.html)

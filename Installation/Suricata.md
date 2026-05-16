@@ -44,3 +44,36 @@ sudo systemctl enable suricata
 sudo systemctl start suricata
 ```
 
+## Configure suricata 
+* after the installation of suricata is done 
+* edit the config file to ensure it monitors the interface that is required 
+* `sudo nano /etc/suricata/suricata.yaml`
+* Under address-groups -> HOME NET -> write the ip address of the agent vm. 
+* Ensure logging is enabled. 
+* Under af-packet -> specify the interface.
+* image reference:
+    - [suricata address-groups](../images/agent%20suricata%20yaml.png)
+    - [suricata logging](../images/agent%20suricata%20yaml2.png)
+    - [suricata af-packet](../images/agent%20suricata%20yaml3.png)
+
+
+## Important Suricata Files and Directories
+
+| File/Directory | Description |
+|---------------|-------------|
+| `/etc/suricata/suricata.yaml` | Main Suricata configuration file |
+| `/var/log/suricata/eve.json` | Primary JSON log file containing alerts, DNS, HTTP, TLS, and flow events |
+| `/var/log/suricata/fast.log` | Human-readable alert log |
+| `/var/log/suricata/stats.log` | Performance and runtime statistics |
+| `/var/log/suricata/suricata.log` | Suricata daemon log file |
+| `/var/lib/suricata/rules/suricata.rules` | Downloaded detection rules used by Suricata |
+| `/etc/suricata/rules/` | Directory for custom rule files |
+| `/var/lib/suricata/` | State data, rule files, and supporting assets |
+| `/usr/bin/suricata` | Suricata executable |
+| `/usr/bin/suricata-update` | Utility to download and update rules |
+| `/lib/systemd/system/suricata.service` | Systemd service definition |
+
+
+# 🔗 Links
+For more info, visit suricata documentation site<br>
+[suricata Docs](https://docs.suricata.io/en/latest/what-is-suricata.html)
