@@ -45,6 +45,7 @@ sudo systemctl start suricata
 ```
 
 ## Configure suricata 
+
 * after the installation of suricata is done 
 * edit the config file to ensure it monitors the interface that is required 
 * `sudo nano /etc/suricata/suricata.yaml`

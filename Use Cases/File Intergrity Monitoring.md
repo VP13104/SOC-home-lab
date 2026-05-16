@@ -35,6 +35,7 @@ Wazuh implements FIM through the module, which monitors:
 | Designed specifically for integrity monitoring | Yes       | No      |
 | Compliance use cases (PCI DSS, CIS)            | Excellent | Good    |
 
+---
 
 ## Configuration 
 1. Server VM
@@ -76,11 +77,11 @@ Wazuh implements FIM through the module, which monitors:
     `Dashboard -> agents -> ubuntu agent -> security events`
     - Alredy some alerts maybe visible 
     - To Verify the FIM is activily working 
-    - 
+    <br><br>
     - Head back to the agent 
     - As the root directory was specified for monitoring 
     - create a random file and save it 
-    - 
+    <br><br>
     - Now in the dashboard you will see the alerts about file creating in the root directory 
 
 4. Rules<br>
@@ -93,4 +94,3 @@ Wazuh implements FIM through the module, which monitors:
     - Now mainly the FIM checks for add, delete, modification and checksums etc. But what if a exploit has been added to the directory 
     - For such use case we integrate the FIM with virustotal to get alerts if the file is a know exploit 
     - this will be covered in the next use case [FIM integration with virustotal](../Use%20Cases/FIM%20Integratoin%20with%20Virustotal.md)
-    
