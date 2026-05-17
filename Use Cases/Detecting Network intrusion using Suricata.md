@@ -71,4 +71,12 @@ sudo chmod 640 /etc/suricata/rules/*.rules
 
 2. Simulation
     - Use kali machine to start an nmap scan on the agent 
+    - Head back to the dashboard -> agents -> Threat hunting -> events
+    - Reference Images:
+        - [dashboard events](../images/suricata%20events.png)
+3. Advancements
+    - In this exercise the wazuh dashboards shows the scans as alerts, But there is no active reponse towards the security event
+    - For such use case we enable the active reponse of wazuh to block or ignore the such malicious traffics 
+    - This will be covered in [Detecting and blocking SSH brute force attacks](../Use%20Cases/SSH-brute-force-active-response.md)
+    
     

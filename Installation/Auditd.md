@@ -37,7 +37,7 @@ auditctl -s   -> Status of auditd
 |---------------|-------------|
 | `/etc/audit/auditd.conf` | Main configuration file for the Auditd service |
 | `/etc/audit/rules.d/` | Directory containing persistent custom audit rules |
-| `/etc/audit/rules.d/audit.rules` | Custom rules file used in this lab |
+| `/etc/audit/rules.d/custom.rules` | Custom rules file used in this lab |
 | `/etc/audit/audit.rules` | Compiled rules loaded by Auditd at runtime |
 | `/var/log/audit/audit.log` | Primary audit log file containing recorded events |
 | `/sbin/auditctl` | Command-line utility to view and manage active audit rules |
