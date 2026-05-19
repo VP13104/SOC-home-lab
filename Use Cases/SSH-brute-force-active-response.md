@@ -29,7 +29,7 @@ In this lab, the Kali Linux VM launches a brute force attack against the Ubuntu 
 1. Server VM
     - edit ossec.conf file <br>
     `sudo nano /var/ossec/etc/ossec.conf`
-    - scroll down to "active-response" ensure this command is present.
+    - scroll down to "active-response" ensure this command is present.<br>
     ```
     <command>
         <name>firewall-drop</name>
@@ -37,7 +37,7 @@ In this lab, the Kali Linux VM launches a brute force attack against the Ubuntu 
         <timeout_allowed>yes</timeout_allowed>
     </command>
     ```
-    - next up we need to add the actual active response command that will be trigger when a rule is tiggered 
+    - next up we need to add the actual active response command that will be trigger when a rule is tiggered<br>
     ```
      <!-- active-response options here -->
      <active-response>
@@ -66,7 +66,7 @@ In this lab, the Kali Linux VM launches a brute force attack against the Ubuntu 
 *NOTICE: YOU CAN VERIFY THE TYPE OF ACTIVE RESPONSES AVAILABLE IN YOUR AGENT BY VISITING /var/ossec/active-response/bin*
 
 ### Attack simulation
-- use hydra to start a ssh brute force attack
+- use hydra to start a ssh brute force attack<br>
 ```
 hydra -l root -P rockyou.txt ip address ssh
 ```

@@ -15,20 +15,20 @@ In this use case, the Ubuntu agent is configured with Suricata IDS to monitor ne
 First of Follow the steps in [suricata.md](../Installation/Suricata.md) and install suricata. After installation and ip configuration there is still one step left that is installing rules. You can use either default suricata rules or other rulesets developed by third parties.
 
 ### Using Suricata-update
-1. Default rules:-
+1. Default rules:-<br>
 ```
 sudo suricata-update
 ```
 - this will download emerging threats open ruleset into `/var/lib/suricata/rules/` 
 
-2. Using other rulesets
+2. Using other rulesets<br>
 ```
 sudo suricata-update update-sources
 sudo suricata-update list-sources
 ```
 Reference image:- [suricata rules list](../images/suricata%20rules%20list.png)<br>
 Each of the rulesets has a name that has a 'vendor' prefix, followed by a set name. be sure to check the licence(commercial, MIT..)<br>
-<b>#To enable emerging threat open or osif </b>
+<b>#To enable emerging threat open or osif </b><br>
 ```
 sudo suricata-update enable-source et/open
 sudo suricata-update
@@ -47,7 +47,7 @@ sudo chmod 640 /etc/suricata/rules/*.rules
 1. Agent VM
     - edit suricata configuration file 
     - `sudo nano /etc/suricata/suricata.yaml`
-    - under 
+    - under default-rule-path <br>
     ```
     default-rule-path: <path to rules file>
     rule-files:
@@ -60,7 +60,7 @@ sudo chmod 640 /etc/suricata/rules/*.rules
     Notice: For this Lab i installed Emerging threats rules directly from the website and moved it to /etc/suricata/rules/ & used it as default rule path<br>
     - Now we need to send the suricata logs to wazuh dashboard
     - `sudo nano /var/ossec/etc/ossec.conf`
-    - scroll down to localfile 
+    - scroll down to localfile<br>
     ```
     <localfile>
     <log_format>json</log_format>

@@ -42,7 +42,7 @@ Wazuh implements FIM through the module, which monitors:
     - edit ossec.conf file to enable all logs 
     `sudo nano /var/ossec/etc/ossec.conf`
     - under "ossec_config" 
-    - make sure logall is enabled 
+    - make sure logall is enabled <br>
     ```
     <logall>all</logall>
     <logall_json>yes</logall_json>
@@ -56,12 +56,12 @@ Wazuh implements FIM through the module, which monitors:
     - edit ossec.conf file to specify the file or directory to watch over 
     - `sudo nano /var/ossec/etc/ossec.conf`
     - under "File Integerity monitoring"
-    - ensure syscheck is enabled 
+    - ensure syscheck is enabled <br>
     ```
     <syscheck>
         <disabled>no</disabled>
     ```
-    - specify directory
+    - specify directory<br>
     ```
     <directories check_all="yes" report_changes="yes" realtime="yes">/root</directories>
     ```

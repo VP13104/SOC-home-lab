@@ -16,13 +16,13 @@ In this use case, commands executed with elevated privileges are captured by Aud
 ## Configuration 
 
 First install auditd by following the steps in [auditd.md](../Installation/Auditd.md). Once installation is complete we need to configure the rules and specify the rule file audit need to use. Two ways to do it,
-1. use Default file 
+1. use Default file <br>
 ``` 
 sudo auditctl -R /etc/audit/audit.rules
 ```
 2. use custom file 
 - create a custom file in "/etc/audit/rules.d/" 
-- then restart the service 
+- then restart the service<br> 
 ```
 sudo auditctl -R /etc/audit/rules.d/custom.rules
 ```
@@ -31,19 +31,19 @@ sudo auditctl -R /etc/audit/rules.d/custom.rules
 For this lab we are using custom rules file to monitore all the commands executed in as "root"
 
 1. Agent VM
-    - create custom file "/etc/audit/rules.d/custom.rules"
+    - create custom file "/etc/audit/rules.d/custom.rules"<br>
     ```
     -a always,exit -F arch=b64 -S execve -S execveat -F euid=0 -k audit-wazuh-c
     -a always,exit -F arch=b32 -S execve -S execveat -F euid=0 -k audit-wazuh-c
     ```
-    - add audtid log file to ossec.conf. The log file used here is at "/var/log/audit/audit.log"
+    - add audtid log file to ossec.conf. The log file used here is at "/var/log/audit/audit.log"<br>
     ```
     <localfile>
         <log_format>audit</log_format>
         <location>/var/log/audit/audit.log</location>
     </localfile>
     ```
-    - restart auditd and wazuh-agent
+    - restart auditd and wazuh-agent<br>
     ```
     sudo auditctl -R /etc/audit/rules.d/custom.rules
     sudo systemctl restart wazuh-agent
@@ -57,7 +57,7 @@ The following suspicious commands are executed on the Ubuntu agent as root:
 - Reading sensitive files (`/etc/shadow`)
 - Creating new users
 - Modifying file permissions
-- Downloading remote scripts
+- Downloading remote scripts<br>
 ```
 sudo cat /etc/shadow
 sudo useradd attacker

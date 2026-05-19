@@ -19,7 +19,7 @@ In this lab, a test file is created on the Ubuntu agent. Wazuh calculates the fi
 1. Server VM
     - Go to dashboard <br>
         rules -> manage rules -> search for local_rules.xml
-    - add two new rules that will be trigged by FIM rules of create and modified file 
+    - add two new rules that will be trigged by FIM rules of create and modified file<br>
     ```
     <rule id="100002" level="7">
     <if_sid>550</if_sid>
@@ -40,7 +40,7 @@ In this lab, a test file is created on the Ubuntu agent. Wazuh calculates the fi
 
     - Next edit ossec.conf
     - sudo nano /var/ossec/etc/ossec.conf
-    - scroll down to integration 
+    - scroll down to integration <br>
     ```
     <integration>
         <name>virustotal</name>
@@ -49,14 +49,13 @@ In this lab, a test file is created on the Ubuntu agent. Wazuh calculates the fi
         <alert_format>json</alert_format>
     </integration>
     ```
-    - restart services
+    - restart services<br>
     ```
     sudo systemctl restart wazuh-manager
     ```
-    - Reference Image: []()
 
 ### Attack Simulation 
-- install a malware file on the agent machines root directory
+- install a malware file on the agent machines root directory<br>
 ```
 curl -Lo /root/eicar.com https://secure.eicar.org/eicacr.com && sudo ls -lah /root/eicar.com
 ```
