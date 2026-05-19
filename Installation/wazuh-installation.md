@@ -51,7 +51,8 @@ Agents Management → Deploy New Agent
 
 * Return to the Wazuh Dashboard and confirm that the agent appears with a status of Active.<br>
 
-## Configure wazuh agent 
+## Troubleshooting 
+<b>If the agent does not connect to the wazuh-manager</b>
 * After installation of wazuh-agent is done 
 * open ossec.conf file
 * `sudo nano /var/ossec/etc/ossec.conf`
@@ -60,7 +61,7 @@ Agents Management → Deploy New Agent
 <server>
 <address>IP address of server</address>
 ```
-* image reference: [agent ossec.conf](../images/agent%20ossec.png)
+* image refernce: [agent ossec.conf](../images/agent%20ossec.png)
 * restart wazuh-agent<br>
 `sudo systemctl restart wazuh-agent`
 * this will connect to the server now and the agent will be visible on the dashboard

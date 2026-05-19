@@ -12,7 +12,7 @@ In this use case, the Ubuntu agent is configured with Suricata IDS to monitor ne
 
 ## Configuration 
 
-First of Follow the steps in [suricata.md](../Installation/Suricata.md) and install suricata. After installation and ip configuration there is still one step left that is installing rules. You can use either default suricata rules or other rulesets developed by third parties.
+First of Follow the steps in [suricata](../Installation/suricata-installation.md) and install suricata. After installation and ip configuration there is still one step left that is installing rules. You can use either default suricata rules or other rulesets developed by third parties.
 
 ### Using Suricata-update
 1. Default rules:-<br>
@@ -26,7 +26,7 @@ sudo suricata-update
 sudo suricata-update update-sources
 sudo suricata-update list-sources
 ```
-Reference image:- [suricata rules list](../images/suricata%20rules%20list.png)<br>
+Refernce image:- [suricata rules list](../images/suricata%20rules%20list.png)<br>
 Each of the rulesets has a name that has a 'vendor' prefix, followed by a set name. be sure to check the licence(commercial, MIT..)<br>
 <b>#To enable emerging threat open or osif </b><br>
 ```
@@ -53,7 +53,7 @@ sudo chmod 640 /etc/suricata/rules/*.rules
     rule-files:
             - <rules file>
     ```
-    - Reference Image: 
+    - Refernce Image: 
         - [Suricata Emerging rules](../images/suricata%20emerging%20rules.png)
         - [Suricata config file](../images/suricata%20rules%20config.png)<br>
     
@@ -72,7 +72,7 @@ sudo chmod 640 /etc/suricata/rules/*.rules
 2. Simulation
     - Use kali machine to start an nmap scan on the agent 
     - Head back to the dashboard -> agents -> Threat hunting -> events
-    - Reference Images:
+    - Refernce Images:
         - [dashboard events](../images/suricata%20events.png)
 3. Advancements
     - In this exercise the wazuh dashboards shows the scans as alerts, But there is no active reponse towards the security event

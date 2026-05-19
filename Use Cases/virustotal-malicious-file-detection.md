@@ -36,7 +36,7 @@ In this lab, a test file is created on the Ubuntu agent. Wazuh calculates the fi
     </rule>
     ```
     
-    - Reference Image: [local rules](../images/local%20rules.png)
+    - Refernce Image: [local rules](../images/local%20rules.png)
 
     - Next edit ossec.conf
     - sudo nano /var/ossec/etc/ossec.conf
@@ -60,5 +60,5 @@ In this lab, a test file is created on the Ubuntu agent. Wazuh calculates the fi
 curl -Lo /root/eicar.com https://secure.eicar.org/eicacr.com && sudo ls -lah /root/eicar.com
 ```
 - check dashboard 
-- Reference Image: [malware file events](../images/virustotal%20events.png)
+- Refernce Image: [malware file events](../images/virustotal%20events.png)
 

@@ -52,7 +52,7 @@ sudo systemctl start suricata
 * Under address-groups -> HOME NET -> write the ip address of the agent vm. 
 * Ensure logging is enabled. 
 * Under af-packet -> specify the interface.
-* image reference:
+* image refernce:
     - [suricata address-groups](../images/agent%20suricata%20yaml.png)
     - [suricata logging](../images/agent%20suricata%20yaml2.png)
     - [suricata af-packet](../images/agent%20suricata%20yaml3.png)
