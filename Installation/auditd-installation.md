@@ -23,7 +23,7 @@ using auditctl
 ```
 auditctl -s   -> Status of auditd
 ```
-| enable flag                           | Description                   |
+|Flag               |Description                   |
 | --------------------------------------|-------------------------------|
 | 0                                     |auditd is disabled             |
 |1                                      |auditd is enabled              |

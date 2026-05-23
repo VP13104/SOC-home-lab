@@ -15,7 +15,7 @@ In this use case, commands executed with elevated privileges are captured by Aud
 
 ## Configuration 
 
-First install auditd by following the steps in [auditd.md](../Installation/Auditd.md). Once installation is complete we need to configure the rules and specify the rule file audit need to use. Two ways to do it,
+First install auditd by following the steps in [auditd.md](../installation/auditd-installation.md). Once installation is complete we need to configure the rules and specify the rule file audit need to use. Two ways to do it,
 1. use Default file <br>
 ``` 
 sudo auditctl -R /etc/audit/audit.rules

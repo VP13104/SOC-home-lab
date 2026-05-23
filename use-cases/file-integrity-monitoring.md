@@ -93,4 +93,4 @@ Wazuh implements FIM through the module, which monitors:
 5. Advancements
     - Now mainly the FIM checks for add, delete, modification and checksums etc. But what if a exploit has been added to the directory 
     - For such use case we integrate the FIM with virustotal to get alerts if the file is a know exploit 
-    - this will be covered in the next use case [FIM integration with virustotal](../Use%20Cases/virustotal-malicious-file-detection.md)
+    - this will be covered in the next use case [FIM integration with virustotal](../use-cases/virustotal-malicious-file-detection.md)

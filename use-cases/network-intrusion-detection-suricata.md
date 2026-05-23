@@ -12,7 +12,7 @@ In this use case, the Ubuntu agent is configured with Suricata IDS to monitor ne
 
 ## Configuration 
 
-First of Follow the steps in [suricata](../Installation/suricata-installation.md) and install suricata. After installation and ip configuration there is still one step left that is installing rules. You can use either default suricata rules or other rulesets developed by third parties.
+First of Follow the steps in [suricata](../installation/suricata-installation.md) and install suricata. After installation and ip configuration there is still one step left that is installing rules. You can use either default suricata rules or other rulesets developed by third parties.
 
 ### Using Suricata-update
 1. Default rules:-<br>
@@ -77,6 +77,6 @@ sudo chmod 640 /etc/suricata/rules/*.rules
 3. Advancements
     - In this exercise the wazuh dashboards shows the scans as alerts, But there is no active reponse towards the security event
     - For such use case we enable the active reponse of wazuh to block or ignore the such malicious traffics 
-    - This will be covered in [Detecting and blocking SSH brute force attacks](../Use%20Cases/SSH-brute-force-active-response.md)
+    - This will be covered in [Detecting and blocking SSH brute force attacks](../use-cases/SSH-brute-force-active-response.md)
     
     
