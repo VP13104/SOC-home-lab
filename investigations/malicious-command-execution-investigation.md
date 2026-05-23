@@ -101,20 +101,6 @@ Auditd successfully logged command execution activity, including user context, t
 
 ---
 
-## Audit Log Analysis
-
-Auditd logs captured:
-
-- Executed command
-- User context
-- Timestamp
-- Process identifiers
-- Command arguments
-
-This provided enhanced visibility into endpoint activity and administrative actions.
-
----
-
 ## Security Impact
 
 Malicious command execution may allow attackers to:
@@ -139,9 +125,3 @@ To strengthen command execution monitoring:
 - Alert on suspicious outbound command usage
 - Implement least-privilege access controls
 - Restrict unauthorized administrative actions
-
----
-
-## Conclusion
-
-The simulated malicious command activity was successfully detected and investigated using Auditd and Wazuh SIEM, demonstrating effective endpoint visibility and command execution monitoring capabilities within the SOC homelab environment.

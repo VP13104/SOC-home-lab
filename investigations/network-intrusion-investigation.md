@@ -96,17 +96,6 @@ Suricata successfully generated IDS alerts associated with port scanning and sus
 
 ---
 
-## Packet Analysis
-
-The network traffic contained characteristics commonly associated with reconnaissance activity, including:
-
-- Sequential port probing
-- TCP SYN scanning behavior
-- Service detection attempts
-- High connection frequency
-
----
-
 ## Security Impact
 
 Network reconnaissance is commonly used by attackers to:
@@ -131,8 +120,3 @@ To improve network intrusion detection capabilities:
 - Correlate IDS alerts with endpoint telemetry
 - Create custom detection rules for aggressive scanning patterns
 
----
-
-## Conclusion
-
-The simulated reconnaissance activity was successfully identified by Suricata IDS and correlated within Wazuh SIEM, demonstrating effective visibility into suspicious network scanning behavior within the SOC homelab environment.
