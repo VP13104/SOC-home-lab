@@ -50,4 +50,5 @@ auditctl -s   -> Status of auditd
 # 🔗 Links
 For more info, read the following documentations <br>
 [Auditd](https://linux.die.net/man/8/auditd)<br>
-[Red Hat Docs](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/security_guide/chap-system_auditing)
+[Red Hat Docs](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/security_guide/chap-system_auditing)<br>
+[Auditd Linux Docs](https://man7.org/linux/man-pages/man7/audit.rules.7.html)
