@@ -71,6 +71,7 @@ sudo chmod 640 /etc/suricata/rules/*.rules
 
 2. Simulation
     - Use kali machine to start an nmap scan on the agent 
+    - `nmap -sS -sV <TARGET IP>`
     - Head back to the dashboard -> agents -> Threat hunting -> events
     - Refernce Images:
         - [dashboard events](../images/suricata%20events.png)

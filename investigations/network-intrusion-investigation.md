@@ -8,15 +8,15 @@ A network reconnaissance scan was simulated from a Kali Linux attacker machine a
 
 ## Alert Details
 
-| Field | Value |
-|---|---|
-| Alert Severity | Medium |
-| Detection Source | Suricata IDS |
-| Source IP | Kali Attacker IP |
-| Destination IP | Ubuntu Target |
-| Attack Type | Network Reconnaissance |
-| Protocol | TCP |
-| Detection Engine | Suricata |
+| Field             | Value             |
+|---                |   ---             |
+| Alert Severity    | Medium            |
+| Detection Source  | Suricata IDS |
+| Source IP         | 192.168.30.5 |
+| Destination IP    | 192.168.30.4 |
+| Attack Type       | Network Reconnaissance |
+| Protocol          | UDP/TCP |
+| Detection Engine  | Suricata |
 
 ---
 
@@ -57,6 +57,7 @@ Suricata successfully generated IDS alerts associated with port scanning and sus
 ---
 
 ## MITRE ATT&CK Mapping
+The observed reconnaissance behavior was manually mapped to the following MITRE ATT&CK techniques during investigation:
 
 | Tactic | Technique | ID |
 |---|---|---|
@@ -65,34 +66,16 @@ Suricata successfully generated IDS alerts associated with port scanning and sus
 
 ---
 
-## Indicators of Compromise (IOCs)
-
-| Type | Value |
-|---|---|
-| Source IP | Attacker IP |
-| Scan Type | SYN Scan |
-| Tool | Nmap |
-| Target Ports | Multiple |
-| Protocol | TCP |
-
----
-
 ## Evidence Collection
 
 ### Nmap Scan Execution
-(Add Screenshot)
-
-### Suricata Alerts
-(Add Screenshot)
+[Kali](../images/kali-nmap-scan.png)
 
 ### Wazuh Dashboard Alerts
-(Add Screenshot)
+[Alerts](../images/suricata%20events.png)
 
 ### Alert Details
-(Add Screenshot)
-
-### Network Traffic Analysis
-(Add Screenshot)
+[Details](../images/suricata-events-details.png)
 
 ---
 

